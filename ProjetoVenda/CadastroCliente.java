@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 class CadastroCliente extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
-	JLabel lblEndereco = new JLabel ("Endereço:");
+	JLabel lblEndereco = new JLabel ("Endereï¿½o:");
 	JLabel lblEmail = new JLabel ("Email:");
 	JLabel lblTelefone = new JLabel ("Telefone:");
 	JLabel lblCidade = new JLabel ("Cidade:");
@@ -13,6 +13,7 @@ class CadastroCliente extends JFrame{
 	JLabel lblCEP = new JLabel ("CEP:");
 	JLabel lblCPF = new JLabel ("CPF:");
 	JLabel lblSexo = new  JLabel ("Sexo:");
+	JLabel lblSenha = new JLabel ("Senha:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
 	JTextField txtNome = new JTextField(null, 20);
@@ -24,6 +25,7 @@ class CadastroCliente extends JFrame{
 	JTextField txtBairro = new JTextField(null, 20);
 	JTextField txtCEP = new JTextField(null, 20);
 	JTextField txtCPF = new JTextField(null, 20);
+	JTextField txtSenha = new JTextField(null, 20);
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
 	JButton btnNovo = new JButton ("Novo"); // criando objetos da classe 
@@ -49,7 +51,7 @@ class CadastroCliente extends JFrame{
 		 c.add(txtEmail).setFont(new Font("ROCKWELL", Font.BOLD, 12));
 		 c.add(txtEmail).setBackground(new Color(173,216,230));
 		 
-		 //ENDEREÇO
+		 //ENDEREï¿½O
 		 c.add(lblEndereco).setFont(new Font("ROCKWELL", Font.BOLD, 14));
 		 c.add(txtEndereco).setFont(new Font("ROCKWELL", Font.BOLD, 12));
 		 c.add(txtEndereco).setBackground(new Color(173,216,230));
@@ -89,13 +91,19 @@ class CadastroCliente extends JFrame{
 		 c.add(lblSexo).setFont(new Font("ROCKWELL", Font.BOLD, 14));
 		 c.add(cboSexo).setFont(new Font("ROCKWELL", Font.BOLD, 12));
 		 c.add(cboSexo).setBackground(Color.WHITE);
+
+		  //SENHA
 		 
-		 //ESPAÇO
+		 c.add(lblSenha).setFont(new Font("ROCKWELL", Font.BOLD, 14));
+		 c.add(txtSenha).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+		 c.add(txtSenha).setBackground(new Color(173,216,230));
+		 
+		 //ESPAï¿½O
 		 c.add(lblEspaco);
 		 c.add(lblEspaco2);
 		 
 		 
-		 //BOTÕES
+		 //BOTï¿½ES
 		 //NOVO
 		 //c.add(btnNovo).setBackground(new Color(18, 10, 143)); 
 		 //c.add(btnNovo).setForeground(new Color(237, 241, 238));
@@ -125,9 +133,9 @@ class CadastroCliente extends JFrame{
 		 getContentPane().setBackground(new Color(173,216,230)); //cor de fundo da lbl
 		 setSize(500,400);
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
-		 setResizable(false); // não poder diminuir
+		 setResizable(false); // nï¿½o poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // visível
+		 setVisible(true); // visï¿½vel
 		 pack();
 	}
 }
