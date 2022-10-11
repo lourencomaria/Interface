@@ -1,0 +1,5 @@
+package ProjetoVenda;
+
+class CadastroFornecedor {
+
+}
