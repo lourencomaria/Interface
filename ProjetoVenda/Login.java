@@ -4,11 +4,11 @@ import java.awt.*;
 import javax.swing.*;
 class Login extends JFrame{
 	JLabel lblEmail = new JLabel ("Email:");
-	JLabel lblCPF = new JLabel ("CPF:");
+	JLabel lblSenha = new JLabel ("Senha:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
 	JTextField txtEmail = new JTextField(null, 20);
-	JTextField txtCPF = new JTextField(null, 20);
+	JTextField txtSenha = new JTextField(null, 20);
 	JButton btnEntrar = new JButton ("Entrar");
 	JButton btnCadastrar = new JButton ("Tela de Cadastro");
 	
@@ -23,20 +23,20 @@ class Login extends JFrame{
 		 c.add(txtEmail).setBackground(new Color(173,216,230));
 		 
 		 //CPF
-		 c.add(lblCPF).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(txtCPF).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(txtCPF).setBackground(new Color(173,216,230));
+		 c.add(lblSenha).setFont(new Font("ROCKWELL", Font.BOLD, 14));
+		 c.add(txtSenha).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+		 c.add(txtSenha).setBackground(new Color(173,216,230));
 		 
-		 //ESPAÇO
+		 //ESPAï¿½O
 		 c.add(lblEspaco);
 		 c.add(lblEspaco2);
 		 
-		 // BOTÃO TELA CADASTROS
+		 // BOTï¿½O TELA CADASTROS
 		 c.add(btnCadastrar).setBackground(new Color(0, 100, 0)); 
 		 c.add(btnCadastrar).setForeground(new Color(237, 241, 238)); 
 		 c.add(btnCadastrar).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
 		 
-		 //BOTÃO ENTRAR
+		 //BOTï¿½O ENTRAR
 		 c.add(btnEntrar).setBackground(new Color(18, 10, 143)); 
 		 c.add(btnEntrar).setForeground(new Color(237, 241, 238)); 
 		 c.add(btnEntrar).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
@@ -47,9 +47,9 @@ class Login extends JFrame{
 		 getContentPane().setBackground(new Color(173,216,230)); //cor de fundo da lbl
 		 setSize(500,400);
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
-		 setResizable(false); // não poder diminuir
+		 setResizable(false); // nï¿½o poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // visível
+		 setVisible(true); // visï¿½vel
 		 pack();
 		 
 	}
