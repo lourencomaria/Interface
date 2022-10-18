@@ -6,6 +6,7 @@ class Testes {
 		new Login();
 		new TelaCadastros() ;
 		new CadastroCliente();
+		new CadastroFornecedor();
 
 	}
 
