@@ -7,6 +7,7 @@ class Testes {
 		new TelaCadastros() ;
 		new CadastroCliente();
 		new CadastroFornecedor();
+		new CadastroProduto();
 
 	}
 

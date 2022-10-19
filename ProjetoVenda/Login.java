@@ -1,42 +1,42 @@
 package ProjetoVenda;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class Login extends JFrame{
-	JLabel lblEmail = new JLabel ("Email:");
-	JLabel lblSenha = new JLabel ("Senha:");
-	JLabel lblEspaco = new  JLabel ("");
-	JLabel lblEspaco2 = new  JLabel ("");
-	JLabel lblEspaco3 = new  JLabel ("");
+JLabel lblEmail = new JLabel ("Email:");
+JLabel lblSenha = new JLabel ("Senha:");
+JLabel lblEspaco = new JLabel ("");
+JLabel lblEspaco2 = new JLabel ("");
+JLabel lblEspaco3 = new JLabel ("");
+JTextField txtEmail = new JTextField(null, 20);
+JTextField txtSenha = new JTextField(null, 20);
+JButton btnEntrar = new JButton ("Entrar");
+JButton btnCadastrar = new JButton ("Tela de Cadastro");
 
-	JTextField txtEmail = new JTextField(null, 20);
-	JTextField txtSenha = new JTextField(null, 20);
-	JButton btnEntrar = new JButton ("Entrar");
-	
-	
-	public Login () {
-		Container c = getContentPane();
-		 setLayout(new GridLayout (0,2));
-		 setTitle("Login");
+
+public Login () {
+Container c = getContentPane();
+setLayout(new GridLayout (0,2));
+setTitle("Login");
+
+//EMAIL
+c.add(lblEmail).setFont(new Font("ROCKWELL", Font.BOLD, 14));
+c.add(txtEmail).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+c.add(txtEmail).setBackground(new Color(173,216,230));
+
+//CPF
+c.add(lblSenha).setFont(new Font("ROCKWELL", Font.BOLD, 14));
+c.add(txtSenha).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+c.add(txtSenha).setBackground(new Color(173,216,230));
 		 
-		//EMAIL
-		 c.add(lblEmail).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(txtEmail).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(txtEmail).setBackground(new Color(173,216,230));
-		 
-		 //CPF
-		 c.add(lblSenha).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(txtSenha).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(txtSenha).setBackground(new Color(173,216,230));
-		 
-		 //ESPA�O
+		 //ESPAÇO
 		 c.add(lblEspaco);
 		 c.add(lblEspaco2);
 		 c.add(lblEspaco3);
-				 
+
 		 
-		 
-		 //BOT�O ENTRAR
+		 //BOTÃO ENTRAR
 		 c.add(btnEntrar).setBackground(new Color(18, 10, 143)); 
 		 c.add(btnEntrar).setForeground(new Color(237, 241, 238)); 
 		 c.add(btnEntrar).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
@@ -47,9 +47,9 @@ class Login extends JFrame{
 		 getContentPane().setBackground(new Color(173,216,230)); //cor de fundo da lbl
 		 setSize(500,400);
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
-		 setResizable(false); // n�o poder diminuir
+		 setResizable(false); // não poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // vis�vel
+		 setVisible(true); // visível
 		 pack();
 		 
 	}
