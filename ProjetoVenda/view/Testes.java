@@ -1,4 +1,4 @@
-package ProjetoVenda;
+package view;
 
 class Testes {
 

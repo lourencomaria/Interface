@@ -1,6 +1,7 @@
-package ProjetoVenda;
+package view;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class TelaCadastros extends JFrame{ 
 	JLabel lblProduto = new JLabel ("Cadastrar:"); 
@@ -21,7 +22,7 @@ class TelaCadastros extends JFrame{
 	public TelaCadastros () {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,3));
-		 setTitle("Opção de Cadastro");  
+		 setTitle("Opï¿½ï¿½o de Cadastro");  
 		  
 		 c.add(lblCliente).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
 		 c.add(lblEspaco);
@@ -58,10 +59,41 @@ class TelaCadastros extends JFrame{
 		 getContentPane().setBackground(new Color(173,216,230)); //cor de fundo da lbl
 		 setSize(800,500);
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
-		 //setResizable(false); // não poder diminuir
+		 //setResizable(false); // nï¿½o poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // visível
+		 setVisible(false); // visï¿½vel
 		 pack();
+
+		 btnCadastroCliente.addActionListener(this::btnCadastroCliente);
+		 btnCadastroFornecedor.addActionListener(this::btnCadastroFornecedor);
+		 btnCadastroProduto.addActionListener(this::btnCadastroProduto);
+		 btnVoltar.addActionListener(this::btnVoltar);
+
 	}
+
+	private void btnVoltar(ActionEvent actionEvent) {
+		Login login = new Login();
+		login.setVisible(true);
+		setVisible(false);
+	}
+
+	private void btnCadastroProduto(ActionEvent actionEvent) {
+		CadastroProduto cadastroProduto = new CadastroProduto();
+		//cadastroProduto.setVisible(true);
+	}
+
+	private void btnCadastroFornecedor(ActionEvent actionEvent) {
+		CadastroFornecedor cadastroFornecedor= new CadastroFornecedor();
+		cadastroFornecedor.setVisible(true);
+		setVisible(false);
+	}
+
+	private void btnCadastroCliente(ActionEvent actionEvent) {
+		CadastroCliente cadastroCliente = new CadastroCliente();
+		cadastroCliente.setVisible(true);
+		setVisible(false);
+	}
+
+
 
 }

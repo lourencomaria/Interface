@@ -1,6 +1,10 @@
-package ProjetoVenda;
+package view;
+
+import dao.ClienteDao;
+import model.Cliente;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class CadastroCliente extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
@@ -135,9 +139,52 @@ class CadastroCliente extends JFrame{
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
 		 setResizable(false); // n�o poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // vis�vel
+		 setVisible(false); // vis�vel
 		 pack();
+
+		 btnVoltar.addActionListener(this::btnVoltar);
+		 btnSalvar.addActionListener(this::btnSalvar);
 	}
+
+	private void btnSalvar(ActionEvent actionEvent) {
+		if(txtBairro.getText().isEmpty() || txtCEP.getText().isEmpty() || txtCidade.getText().isEmpty() || txtEmail.getText().isEmpty() || txtEndereco.getText().isEmpty()|| txtCPF.getText().isEmpty() || txtEstado.getText().isEmpty() || txtNome.getText().isEmpty() || txtSenha.getText().isEmpty() || txtTelefone.getText().isEmpty()){
+			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}else {
+			try {
+				Cliente cliente = new Cliente();
+				cliente.setNome(txtNome.getText());
+				cliente.setBairro(txtBairro.getText());
+				cliente.setCep(txtCEP.getText());
+				cliente.setCpf(txtCPF.getText());
+				cliente.setEmail(txtEmail.getText());
+				cliente.setCidade(txtCidade.getText());
+				cliente.setEndereco(txtEndereco.getText());
+				cliente.setBairro(txtBairro.getText());
+				cliente.setEstado(txtEstado.getText());
+				cliente.setTelefone(txtTelefone.getText());
+				cliente.setSexo(cboSexo.toString());
+				cliente.setSenha(txtSenha.getText());
+
+				ClienteDao clienteDao = new ClienteDao();
+				clienteDao.Cadastro(cliente);
+			}catch (Exception error){
+				JOptionPane.showMessageDialog(null,"Erro ao criar objeto. ERRO"+error,"ERRO",JOptionPane.ERROR_MESSAGE);
+
+			}
+
+
+
+
+		}
+	}
+
+	private void btnVoltar(ActionEvent actionEvent) {
+		TelaCadastros telaCadastros = new TelaCadastros();
+		telaCadastros.setVisible(true);
+		setVisible(false);
+	}
+
 }
 
 

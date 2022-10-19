@@ -1,6 +1,7 @@
-package ProjetoVenda;
+package view;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class Login extends JFrame{
 	JLabel lblEmail = new JLabel ("Email:");
@@ -11,7 +12,8 @@ class Login extends JFrame{
 	JTextField txtSenha = new JTextField(null, 20);
 	JButton btnEntrar = new JButton ("Entrar");
 	JButton btnCadastrar = new JButton ("Tela de Cadastro");
-	
+
+
 	public Login () {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,2));
@@ -51,6 +53,29 @@ class Login extends JFrame{
 		 setLocationRelativeTo(null); //ficar no meio da tela
 		 setVisible(true); // vis�vel
 		 pack();
-		 
+
+		 btnCadastrar.addActionListener(this::btnCadastrar);
+		 btnEntrar.addActionListener(this::btnEntrar);
+
 	}
+
+	private void btnEntrar(ActionEvent actionEvent) {
+
+		if(txtEmail.getText().isEmpty() || txtSenha.getText().isEmpty()){
+			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}
+		if(txtEmail.getText().equals("adm@gmail.com")&&txtSenha.getText().equals("12345")){
+
+			JOptionPane.showMessageDialog(null," Entrando na Area do Admin ","REDIRECIONANDO...",JOptionPane.INFORMATION_MESSAGE);
+		}
+	}
+
+	private void btnCadastrar(ActionEvent actionEvent) {
+		TelaCadastros telaCadastros = new TelaCadastros();
+		telaCadastros.setVisible(true);
+		setVisible(false);
+	}
+
+
 }
