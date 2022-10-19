@@ -8,12 +8,13 @@ class Login extends JFrame{
 	JLabel lblSenha = new JLabel ("Senha:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
+	JLabel lblEspaco3 = new  JLabel ("");
+
 	JTextField txtEmail = new JTextField(null, 20);
 	JTextField txtSenha = new JTextField(null, 20);
 	JButton btnEntrar = new JButton ("Entrar");
-	JButton btnCadastrar = new JButton ("Tela de Cadastro");
-
-
+	
+	
 	public Login () {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,2));
@@ -32,11 +33,9 @@ class Login extends JFrame{
 		 //ESPA�O
 		 c.add(lblEspaco);
 		 c.add(lblEspaco2);
+		 c.add(lblEspaco3);
+				 
 		 
-		 // BOT�O TELA CADASTROS
-		 c.add(btnCadastrar).setBackground(new Color(0, 100, 0)); 
-		 c.add(btnCadastrar).setForeground(new Color(237, 241, 238)); 
-		 c.add(btnCadastrar).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
 		 
 		 //BOT�O ENTRAR
 		 c.add(btnEntrar).setBackground(new Color(18, 10, 143)); 
