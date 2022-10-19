@@ -1,4 +1,4 @@
-package ProjetoVenda;
+package view;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -51,6 +51,29 @@ c.add(txtSenha).setBackground(new Color(173,216,230));
 		 setLocationRelativeTo(null); //ficar no meio da tela
 		 setVisible(true); // visível
 		 pack();
-		 
+
+		 btnCadastrar.addActionListener(this::btnCadastrar);
+		 btnEntrar.addActionListener(this::btnEntrar);
+
 	}
+
+	private void btnEntrar(ActionEvent actionEvent) {
+
+		if(txtEmail.getText().isEmpty() || txtSenha.getText().isEmpty()){
+			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}
+		if(txtEmail.getText().equals("adm@gmail.com")&&txtSenha.getText().equals("12345")){
+
+			JOptionPane.showMessageDialog(null," Entrando na Area do Admin ","REDIRECIONANDO...",JOptionPane.INFORMATION_MESSAGE);
+		}
+	}
+
+	private void btnCadastrar(ActionEvent actionEvent) {
+		TelaCadastros telaCadastros = new TelaCadastros();
+		telaCadastros.setVisible(true);
+		setVisible(false);
+	}
+
+
 }

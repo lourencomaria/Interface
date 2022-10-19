@@ -1,6 +1,7 @@
-package ProjetoVenda;
+package view;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class CadastroFornecedor extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
@@ -131,7 +132,23 @@ class CadastroFornecedor extends JFrame{
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
 		 setResizable(false); // não poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // visível
+		 setVisible(false); // visível
 		 pack();
+
+		 btnSalvar.addActionListener(this::btnSalvar);
+		 btnVoltar.addActionListener(this::btnVoltar);
+	}
+
+	private void btnVoltar(ActionEvent actionEvent) {
+		TelaCadastros telaCadastros = new TelaCadastros();
+		telaCadastros.setVisible(true);
+		setVisible(false);
+	}
+
+	private void btnSalvar(ActionEvent actionEvent) {
+		if(txtBairro.getText().isEmpty() || txtCargo.getText().isEmpty() || txtCEP.getText().isEmpty() || txtComp.getText().isEmpty() || txtEmail.getText().isEmpty() || txtCidade.getText().isEmpty() || txtCPF.getText().isEmpty() || txtEstado.getText().isEmpty() || txtNome.getText().isEmpty() || txtQTD.getText().isEmpty() || txtRede.getText().isEmpty() || txtRua.getText().isEmpty() || txtTel1.getText().isEmpty() || txtTel2.getText().isEmpty()){
+			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}
 	}
 }
