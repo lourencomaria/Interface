@@ -19,6 +19,8 @@ class CadastroFornecedor extends JFrame{
 	JLabel lblRede = new JLabel ("Rede Social:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
+	String [] estados = {"AC", "AL","AP","AM" ,"BA" ,"CE" ,"DF" ,"ES" ,"GO" ,"MA" ,"MT" ,"MS" ,"MG" ,"PA" ,"PB" ,"PR" ,"PE" ,"PI" ,"RJ" ,"RN" ,"RS" ,"RO" ,"RR" ,"SC" ,"SP" ,"SE" ,"TO"};
+	JComboBox cboEstados = new JComboBox (estados);
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
 	
@@ -31,7 +33,6 @@ class CadastroFornecedor extends JFrame{
 	JTextField txtQTD = new JTextField(null, 20);
 	JTextField txtRua = new JTextField(null, 20);
 	JTextField txtCidade = new JTextField(null, 20);
-	JTextField txtEstado = new JTextField(null, 20);
 	JTextField txtBairro = new JTextField(null, 20);
 	JTextField txtCEP = new JTextField(null, 20);
 	JTextField txtComp = new JTextField(null, 20);
@@ -83,8 +84,8 @@ class CadastroFornecedor extends JFrame{
 		 
 		 //ESTADO
 		 c.add(lblEstado).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(txtEstado).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(txtEstado).setBackground(new Color(173,216,230));
+		 c.add(cboEstados).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+		 c.add(cboEstados).setBackground(Color.WHITE);
 		 
 		 //CIDADE
 		 c.add(lblCidade).setFont(new Font("ROCKWELL", Font.BOLD, 14));
