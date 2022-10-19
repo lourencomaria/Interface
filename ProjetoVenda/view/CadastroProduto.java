@@ -1,6 +1,10 @@
 package view;
 
+import dao.ProdutoDao;
+import model.Produto;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 class CadastroProduto extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
@@ -100,9 +104,49 @@ class CadastroProduto extends JFrame{
 		 setDefaultCloseOperation(EXIT_ON_CLOSE); //encerrar o programa
 		 setResizable(false); // não poder diminuir
 		 setLocationRelativeTo(null); //ficar no meio da tela
-		 setVisible(true); // visível
+		 setVisible(false); // visível
 		 pack();
+
+		 btnVoltar.addActionListener(this::btnVoltar);
+		 btnSalvar.addActionListener(this::btnSalvar);
 	}
+
+	private void btnSalvar(ActionEvent actionEvent) {
+
+		if(txtNome.getText().isEmpty() || txtDesc.getText().isEmpty() || txtPreco.getText().isEmpty() || txtQTD.getText().isEmpty()){
+			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}else {
+try {
+	Produto produto = new Produto();
+	produto.setNome(txtNome.getText());
+	produto.setDescricao(txtDesc.getText());
+	produto.setPreco(Double.parseDouble(txtPreco.getText()));
+	produto.setCategoria(cboCategoria.getSelectedItem().toString());
+	produto.setQuantidade(Integer.valueOf(txtQTD.getText()));
+	System.out.println(cboCategoria.getSelectedItem().toString());
+	ProdutoDao produtoDao = new ProdutoDao();
+	produtoDao.Cadastro(produto);
+
+}catch (Exception error){
+
+	JOptionPane.showMessageDialog(null,"Erro ao criar objeto. ERRO"+error,"ERRO",JOptionPane.ERROR_MESSAGE);
+
+
+}
+
+
+		}
+
+	}
+
+	private void btnVoltar(ActionEvent actionEvent) {
+		TelaCadastros telaCadastros = new TelaCadastros();
+		telaCadastros.setVisible(true);
+		setVisible(false);
+	}
+
+
 }
 
 

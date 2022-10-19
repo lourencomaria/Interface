@@ -79,7 +79,8 @@ class TelaCadastros extends JFrame{
 
 	private void btnCadastroProduto(ActionEvent actionEvent) {
 		CadastroProduto cadastroProduto = new CadastroProduto();
-		//cadastroProduto.setVisible(true);
+		cadastroProduto.setVisible(true);
+		setVisible(false);
 	}
 
 	private void btnCadastroFornecedor(ActionEvent actionEvent) {

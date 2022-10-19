@@ -164,7 +164,7 @@ class CadastroCliente extends JFrame{
 				cliente.setBairro(txtBairro.getText());
 				cliente.setEstado(txtEstado.getText());
 				cliente.setTelefone(txtTelefone.getText());
-				cliente.setSexo(cboSexo.toString());
+				cliente.setSexo(cboSexo.getSelectedItem().toString());
 				cliente.setSenha(txtSenha.getText());
 
 				ClienteDao clienteDao = new ClienteDao();
