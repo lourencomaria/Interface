@@ -25,11 +25,12 @@ class CadastroCliente extends JFrame{
 	JTextField txtEndereco = new JTextField(null, 20);
 	JTextField txtTelefone = new JTextField(null, 20);
 	JTextField txtCidade = new JTextField(null, 20);
-	JTextField txtEstado = new JTextField(null, 20);
 	JTextField txtBairro = new JTextField(null, 20);
 	JTextField txtCEP = new JTextField(null, 20);
 	JTextField txtCPF = new JTextField(null, 20);
 	JTextField txtSenha = new JTextField(null, 20);
+	String [] estados = {"AC", "AL","AP","AM" ,"BA" ,"CE" ,"DF" ,"ES" ,"GO" ,"MA" ,"MT" ,"MS" ,"MG" ,"PA" ,"PB" ,"PR" ,"PE" ,"PI" ,"RJ" ,"RN" ,"RS" ,"RO" ,"RR" ,"SC" ,"SP" ,"SE" ,"TO"};
+	JComboBox cboEstados = new JComboBox (estados);
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
 	JButton btnNovo = new JButton ("Novo"); // criando objetos da classe 
@@ -77,8 +78,8 @@ class CadastroCliente extends JFrame{
 		 
 		 //ESTADO
 		 c.add(lblEstado).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(txtEstado).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(txtEstado).setBackground(new Color(173,216,230));
+		 c.add(cboEstados).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+		 c.add(cboEstados).setBackground(Color.WHITE);
 		 
 		 //BAIRRO
 		 c.add(lblBairro).setFont(new Font("ROCKWELL", Font.BOLD, 14));
