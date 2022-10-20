@@ -68,8 +68,8 @@ class Login extends JFrame{
 			if (txtEmail.getText().equals("adm@gmail.com") && txtSenha.getText().equals("12345")) {
 
 				JOptionPane.showMessageDialog(null, " Entrando na Area do Admin ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
-				indeAdm indeAdm = new indeAdm();
-				indeAdm.setVisible(true);
+				indexAdm indexAdm = new indexAdm();
+				indexAdm.setVisible(true);
 				setVisible(false);
 			}
 		}catch (Exception error){

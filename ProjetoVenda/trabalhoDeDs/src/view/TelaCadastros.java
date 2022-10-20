@@ -22,7 +22,7 @@ class TelaCadastros extends JFrame{
 	public TelaCadastros () {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,3));
-		 setTitle("Op��o de Cadastro");  
+		 setTitle("Opções de Cadastro");
 		  
 		 c.add(lblCliente).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
 		 c.add(lblEspaco);

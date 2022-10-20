@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 class CadastroCliente extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
-	JLabel lblEndereco = new JLabel ("Endere�o:");
+	JLabel lblEndereco = new JLabel ("Endereço:");
 	JLabel lblEmail = new JLabel ("Email:");
 	JLabel lblTelefone = new JLabel ("Telefone:");
 	JLabel lblCidade = new JLabel ("Cidade:");

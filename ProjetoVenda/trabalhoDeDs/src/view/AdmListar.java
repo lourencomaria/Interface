@@ -56,11 +56,15 @@ public class AdmListar extends JFrame {
         Container c = getContentPane();
         setLayout(new GridLayout(0,1));
         setTitle("Clientes cadastrados");
-        c.add(lblClientes);
+        getContentPane().setBackground(new Color(173,216,230));
+        c.add(lblClientes).setFont(new Font("ROCKWELL", Font.BOLD, 14));;
+
 
         modelo.addColumn("Id");
+        tabela.setBackground(new Color(173,216,230));;
         modelo.addColumn("Nome");
             modelo.addColumn("Email");
+        tabela.setFont(new Font("ROCKWELL", Font.BOLD, 12));
         tabela.getColumnModel().getColumn(0)
                 .setPreferredWidth(10);
         tabela.getColumnModel().getColumn(1)
@@ -81,11 +85,15 @@ public class AdmListar extends JFrame {
 
         setLayout(new GridLayout(0,1));
         setTitle("Fornecedores cadastrados");
-        c.add(lblFornecedores);
+       // c.add(lblFornecedores);
+        c.add(lblFornecedores).setFont(new Font("ROCKWELL", Font.BOLD, 14));
+
 
         modelo2.addColumn("Id");
         modelo2.addColumn("Nome");
         modelo2.addColumn("Email");
+        tabela2.setFont(new Font("ROCKWELL", Font.BOLD, 12));
+        tabela2.setBackground(new Color(173,216,230));;
         tabela2.getColumnModel().getColumn(0)
                 .setPreferredWidth(10);
         tabela2.getColumnModel().getColumn(1)
@@ -106,11 +114,13 @@ public class AdmListar extends JFrame {
 
         setLayout(new GridLayout(0,1));
         setTitle("Produtos cadastrados");
-        c.add(lblProdutos);
+        c.add(lblProdutos).setFont(new Font("ROCKWELL", Font.BOLD, 14));;
 
         modelo3.addColumn("Id");
         modelo3.addColumn("Nome");
-        modelo3.addColumn("Preco");
+        modelo3.addColumn("Preço");
+        tabela3.setFont(new Font("ROCKWELL", Font.BOLD, 12));
+        tabela3.setBackground(new Color(173,216,230));;
         tabela3.getColumnModel().getColumn(0)
                 .setPreferredWidth(10);
         tabela3.getColumnModel().getColumn(1)
@@ -187,11 +197,13 @@ public class AdmListar extends JFrame {
 
     private void btnVoltar(ActionEvent actionEvent) {
 
-        indeAdm indeAdm = new indeAdm();
-        indeAdm.setVisible(true);
+        indexAdm indexAdm = new indexAdm();
+        indexAdm.setVisible(true);
         setVisible(false);
 
     }
+
+
 
 
 
