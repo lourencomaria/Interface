@@ -110,7 +110,7 @@ public class AdmListar extends JFrame {
 
         modelo3.addColumn("Id");
         modelo3.addColumn("Nome");
-        modelo3.addColumn("Email");
+        modelo3.addColumn("Preco");
         tabela3.getColumnModel().getColumn(0)
                 .setPreferredWidth(10);
         tabela3.getColumnModel().getColumn(1)

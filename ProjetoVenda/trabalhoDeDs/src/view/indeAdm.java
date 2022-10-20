@@ -28,7 +28,7 @@ public class indeAdm extends JFrame {
         admListar.setVisible(true);
         setVisible(false);
     }catch (Exception error){
-        JOptionPane.showMessageDialog(null,"Erro ao abrir a tela de Lista","Erro",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Erro ao abrir a tela de Lista erro: "+error,"Erro",JOptionPane.ERROR_MESSAGE);
 
     }
 
