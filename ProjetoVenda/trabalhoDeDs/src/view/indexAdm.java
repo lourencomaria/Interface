@@ -39,8 +39,11 @@ public class indexAdm extends JFrame{
         btnListar.addActionListener(this::btnListar);
         setVisible(true); // vis�vel
         pack();
+<<<<<<< HEAD
 
         btnVoltar.addActionListener(this::btnVoltar);
+=======
+>>>>>>> 289ce3a7d896ebbb1594713eb23a2b607791dd5a
     }
 
     private void btnListar(ActionEvent actionEvent) {
@@ -56,8 +59,13 @@ public class indexAdm extends JFrame{
 
     }
     private void btnVoltar(ActionEvent actionEvent) {
+<<<<<<< HEAD
         Login Login = new Login();
         Login.setVisible(true);
+=======
+        TelaCadastros telaCadastros = new TelaCadastros();
+        telaCadastros.setVisible(true);
+>>>>>>> 289ce3a7d896ebbb1594713eb23a2b607791dd5a
         setVisible(false);
     }
 }

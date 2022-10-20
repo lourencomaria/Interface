@@ -67,6 +67,7 @@ class Login extends JFrame{
 			}
 			if (txtEmail.getText().equals("adm@gmail.com") && txtSenha.getText().equals("12345")) {
 
+<<<<<<< HEAD
 				JOptionPane.showMessageDialog(null, " Entrando na Área do Administrador ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
 				indexAdm indexAdm = new indexAdm();
 				indexAdm.setVisible(true);
@@ -78,6 +79,11 @@ class Login extends JFrame{
 				JOptionPane.showMessageDialog(null, " Entrando na Área do Fornecedor ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
 				indexFornecedor indexFornecedor = new indexFornecedor();
 				indexFornecedor.setVisible(true);
+=======
+				JOptionPane.showMessageDialog(null, " Entrando na Area do Admin ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
+				indexAdm indexAdm = new indexAdm();
+				indexAdm.setVisible(true);
+>>>>>>> 289ce3a7d896ebbb1594713eb23a2b607791dd5a
 				setVisible(false);
 			}
 		}catch (Exception error){
