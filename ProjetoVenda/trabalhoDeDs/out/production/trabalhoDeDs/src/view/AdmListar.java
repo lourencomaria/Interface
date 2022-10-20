@@ -15,10 +15,10 @@ import java.sql.SQLException;
 
 public class AdmListar extends JFrame {
 
-    JLabel lblClientes = new JLabel("Ao Clientes Cadastrados são");
-    JLabel lblFornecedores = new JLabel("Ao Fornecedores Cadastrados são");
+    JLabel lblClientes = new JLabel("Os Clientes Cadastrados são");
+    JLabel lblFornecedores = new JLabel("Os Fornecedores Cadastrados são");
 
-    JLabel lblProdutos = new JLabel("Ao Fornecedores Cadastrados são");
+    JLabel lblProdutos = new JLabel("Os Produtos Cadastrados são");
 
 
 
