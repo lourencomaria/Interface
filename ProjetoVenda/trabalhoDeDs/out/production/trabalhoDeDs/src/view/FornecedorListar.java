@@ -13,33 +13,23 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 
-public class AdmListar extends JFrame {
+public class FornecedorListar extends JFrame {
 
-    JLabel lblClientes = new JLabel("Os Clientes Cadastrados são");
-    JLabel lblFornecedores = new JLabel("Os Fornecedores Cadastrados são");
+
 
     JLabel lblProdutos = new JLabel("Os Produtos Cadastrados são");
 
 
 
-    final DefaultTableModel modelo = new
-            DefaultTableModel();
-
-    final DefaultTableModel modelo2 = new
-            DefaultTableModel();
 
     final DefaultTableModel modelo3 = new
             DefaultTableModel();
 
-    JTable tabela = new JTable(modelo);
-
-    JTable tabela2 = new JTable(modelo2);
 
     JTable tabela3 = new JTable(modelo3);
 
 
-    JScrollPane barraDeRolagem = new JScrollPane(tabela);
-    JScrollPane barraDeRolagem2 = new JScrollPane(tabela2);
+
 
     JScrollPane barraDeRolagem3 = new JScrollPane(tabela3);
 
@@ -47,7 +37,7 @@ public class AdmListar extends JFrame {
     JButton btnCadastrar = new JButton("Cadastrar novo");
     JButton btnVoltar = new JButton("Voltar");
 
-    public AdmListar() throws SQLException, ClassNotFoundException {
+    public FornecedorListar() throws SQLException, ClassNotFoundException {
 
         setSize(800, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,53 +47,10 @@ public class AdmListar extends JFrame {
         setLayout(new GridLayout(0,1));
         setTitle("Clientes cadastrados");
         getContentPane().setBackground(new Color(173,216,230));
-        c.add(lblClientes).setFont(new Font("ROCKWELL", Font.BOLD, 14));;
-
-
-        modelo.addColumn("Id");
-        tabela.setBackground(new Color(173,216,230));;
-        modelo.addColumn("Nome");
-            modelo.addColumn("Email");
-        tabela.setFont(new Font("ROCKWELL", Font.BOLD, 12));
-        tabela.getColumnModel().getColumn(0)
-                .setPreferredWidth(10);
-        tabela.getColumnModel().getColumn(1)
-                .setPreferredWidth(120);
-        tabela.getColumnModel().getColumn(1)
-                .setPreferredWidth(80);
-        tabela.getColumnModel().getColumn(1)
-                .setPreferredWidth(120);
-        pesquisarClientes(modelo);
-        c.add(barraDeRolagem);
 
 
 
-        setSize(800, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
 
-
-        setLayout(new GridLayout(0,1));
-        setTitle("Fornecedores cadastrados");
-       // c.add(lblFornecedores);
-        c.add(lblFornecedores).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-
-
-        modelo2.addColumn("Id");
-        modelo2.addColumn("Nome");
-        modelo2.addColumn("Email");
-        tabela2.setFont(new Font("ROCKWELL", Font.BOLD, 12));
-        tabela2.setBackground(new Color(173,216,230));;
-        tabela2.getColumnModel().getColumn(0)
-                .setPreferredWidth(10);
-        tabela2.getColumnModel().getColumn(1)
-                .setPreferredWidth(120);
-        tabela2.getColumnModel().getColumn(1)
-                .setPreferredWidth(80);
-        tabela2.getColumnModel().getColumn(1)
-                .setPreferredWidth(120);
-        pesquisarFornecedor(modelo2);
-        c.add(barraDeRolagem2);
 
 
 
@@ -133,6 +80,7 @@ public class AdmListar extends JFrame {
         c.add(barraDeRolagem3);
 
         setVisible(false);
+
 
         c.add(btnCadastrar).setBackground(new Color(18, 10, 143));
         c.add(btnCadastrar).setForeground(new Color(237, 241, 238));
@@ -195,16 +143,16 @@ public class AdmListar extends JFrame {
 
     private void btnCadastrar(ActionEvent actionEvent) {
 
-        TelaCadastros telaCadastros = new TelaCadastros();
-        telaCadastros.setVisible(true);
+        FornecedorCadastraProduto FornecedorCadastraProduto = new FornecedorCadastraProduto();
+        FornecedorCadastraProduto.setVisible(true);
         setVisible(false);
 
     }
 
     private void btnVoltar(ActionEvent actionEvent) {
 
-        indexAdm indexAdm = new indexAdm();
-        indexAdm.setVisible(true);
+        indexFornecedor indexFornecedor = new indexFornecedor();
+        indexFornecedor.setVisible(true);
         setVisible(false);
 
     }

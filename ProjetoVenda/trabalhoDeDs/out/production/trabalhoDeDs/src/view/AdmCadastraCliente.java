@@ -3,10 +3,11 @@ package view;
 import dao.ClienteDao;
 import model.Cliente;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
-class CadastroCliente extends JFrame{
+
+class AdmCadastraCliente extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
 	JLabel lblEndereco = new JLabel ("Endereço:");
 	JLabel lblEmail = new JLabel ("Email:");
@@ -32,14 +33,14 @@ class CadastroCliente extends JFrame{
 	JTextField txtSenha = new JTextField(null, 20);
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
-	JButton btnNovo = new JButton ("Novo"); // criando objetos da classe 
+	JButton btnNovo = new JButton ("Novo"); // criando objetos da classe
 	//JButton btnAlterar = new JButton ("Alterar");
 	//JButton btnExcluir = new JButton ("Excluir");
 	JButton btnSalvar = new JButton ("Salvar");
 	JButton btnVoltar = new JButton ("Voltar");
-	
-	
-	public CadastroCliente () {
+
+
+	public AdmCadastraCliente() {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,2));
 		 setTitle("Cadastro De Cliente");

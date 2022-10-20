@@ -22,7 +22,7 @@ class TelaCadastros extends JFrame{
 	public TelaCadastros () {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,3));
-		 setTitle("Op��o de Cadastro");  
+		 setTitle("Opções de Cadastro");
 		  
 		 c.add(lblCliente).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
 		 c.add(lblEspaco);
@@ -72,26 +72,30 @@ class TelaCadastros extends JFrame{
 	}
 
 	private void btnVoltar(ActionEvent actionEvent) {
-		Login login = new Login();
-		login.setVisible(true);
+		try{
+		AdmListar AdmListar = new AdmListar();
+		AdmListar.setVisible(true);
 		setVisible(false);
+	}catch (Exception ERROR){
+			JOptionPane.showMessageDialog(null,"Erro");
+		}
 	}
 
 	private void btnCadastroProduto(ActionEvent actionEvent) {
-		CadastroProduto cadastroProduto = new CadastroProduto();
-		cadastroProduto.setVisible(true);
+		CadastroProduto CadastroProduto = new CadastroProduto();
+		CadastroProduto.setVisible(true);
 		setVisible(false);
 	}
 
 	private void btnCadastroFornecedor(ActionEvent actionEvent) {
-		CadastroFornecedor cadastroFornecedor= new CadastroFornecedor();
-		cadastroFornecedor.setVisible(true);
+		AdmCadastraFornecedor AdmCadastraFornecedor= new AdmCadastraFornecedor();
+		AdmCadastraFornecedor.setVisible(true);
 		setVisible(false);
 	}
 
 	private void btnCadastroCliente(ActionEvent actionEvent) {
-		CadastroCliente cadastroCliente = new CadastroCliente();
-		cadastroCliente.setVisible(true);
+		AdmCadastraCliente AdmCadastraCliente = new AdmCadastraCliente();
+		AdmCadastraCliente.setVisible(true);
 		setVisible(false);
 	}
 

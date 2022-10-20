@@ -143,8 +143,8 @@ class CadastroFornecedor extends JFrame{
 	}
 
 	private void btnVoltar(ActionEvent actionEvent) {
-		TelaCadastros telaCadastros = new TelaCadastros();
-		telaCadastros.setVisible(true);
+		Login Login = new Login();
+		Login.setVisible(true);
 		setVisible(false);
 	}
 

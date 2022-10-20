@@ -67,9 +67,17 @@ class Login extends JFrame{
 			}
 			if (txtEmail.getText().equals("adm@gmail.com") && txtSenha.getText().equals("12345")) {
 
-				JOptionPane.showMessageDialog(null, " Entrando na Area do Admin ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
-				indeAdm indeAdm = new indeAdm();
-				indeAdm.setVisible(true);
+				JOptionPane.showMessageDialog(null, " Entrando na Área do Administrador ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
+				indexAdm indexAdm = new indexAdm();
+				indexAdm.setVisible(true);
+				setVisible(false);
+			}
+
+			if (txtEmail.getText().equals("fornecedor@gmail.com") && txtSenha.getText().equals("12345")) {
+
+				JOptionPane.showMessageDialog(null, " Entrando na Área do Fornecedor ", "REDIRECIONANDO...", JOptionPane.INFORMATION_MESSAGE);
+				indexFornecedor indexFornecedor = new indexFornecedor();
+				indexFornecedor.setVisible(true);
 				setVisible(false);
 			}
 		}catch (Exception error){
@@ -79,8 +87,8 @@ class Login extends JFrame{
 	}
 
 	private void btnCadastrar(ActionEvent actionEvent) {
-		TelaCadastros telaCadastros = new TelaCadastros();
-		telaCadastros.setVisible(true);
+		TelaCadastroFC telaCadastrosFC = new TelaCadastroFC();
+		telaCadastrosFC.setVisible(true);
 		setVisible(false);
 	}
 

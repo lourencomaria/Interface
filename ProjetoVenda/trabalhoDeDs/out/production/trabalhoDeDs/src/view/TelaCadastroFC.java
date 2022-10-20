@@ -1,11 +1,12 @@
 package view;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
-class TelaCadastros extends JFrame{ 
-	JLabel lblProduto = new JLabel ("Cadastrar:"); 
-	JLabel lblCliente = new JLabel ("Cadastrar:"); 
+
+class TelaCadastroFC extends JFrame{
+	JLabel lblProduto = new JLabel ("Cadastrar:");
+	JLabel lblCliente = new JLabel ("Cadastrar:");
 	JLabel lblFornecedor = new JLabel ("Cadastrar:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
@@ -13,13 +14,13 @@ class TelaCadastros extends JFrame{
 	JLabel lblEspaco4 = new  JLabel ("");
 	JLabel lblEspaco5 = new  JLabel ("");
 	JLabel lblEspaco6 = new  JLabel ("");
-	JButton btnCadastroCliente = new JButton ("Cliente"); 
+	JButton btnCadastroCliente = new JButton ("Cliente");
 	JButton btnCadastroFornecedor = new JButton ("Fornecedor");
-	JButton btnCadastroProduto = new JButton ("Produto");
+
 	JButton btnVoltar = new JButton ("Voltar");
-	
-	
-	public TelaCadastros () {
+
+
+	public TelaCadastroFC() {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,3));
 		 setTitle("Opções de Cadastro");
@@ -40,11 +41,8 @@ class TelaCadastros extends JFrame{
 		 
 		 
 		 
-		 c.add(lblProduto).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
-		 c.add(lblEspaco3);
-		 c.add(btnCadastroProduto).setBackground(new Color(18, 10, 143)); 
-		 c.add(btnCadastroProduto).setForeground(new Color(237, 241, 238)); 
-		 c.add(btnCadastroProduto).setFont(new Font("ROCKWELL", Font.BOLD, 14)); 
+
+
 		 
 		 
 		 c.add(lblEspaco6);
@@ -66,36 +64,26 @@ class TelaCadastros extends JFrame{
 
 		 btnCadastroCliente.addActionListener(this::btnCadastroCliente);
 		 btnCadastroFornecedor.addActionListener(this::btnCadastroFornecedor);
-		 btnCadastroProduto.addActionListener(this::btnCadastroProduto);
 		 btnVoltar.addActionListener(this::btnVoltar);
 
 	}
 
 	private void btnVoltar(ActionEvent actionEvent) {
-		try{
-		AdmListar AdmListar = new AdmListar();
-		AdmListar.setVisible(true);
+		Login login = new Login();
+		login.setVisible(true);
 		setVisible(false);
-	}catch (Exception ERROR){
-			JOptionPane.showMessageDialog(null,"Erro");
-		}
 	}
 
-	private void btnCadastroProduto(ActionEvent actionEvent) {
-		CadastroProduto CadastroProduto = new CadastroProduto();
-		CadastroProduto.setVisible(true);
-		setVisible(false);
-	}
 
 	private void btnCadastroFornecedor(ActionEvent actionEvent) {
-		AdmCadastraFornecedor AdmCadastraFornecedor= new AdmCadastraFornecedor();
-		AdmCadastraFornecedor.setVisible(true);
+		CadastroFornecedor cadastroFornecedor= new CadastroFornecedor();
+		cadastroFornecedor.setVisible(true);
 		setVisible(false);
 	}
 
 	private void btnCadastroCliente(ActionEvent actionEvent) {
-		AdmCadastraCliente AdmCadastraCliente = new AdmCadastraCliente();
-		AdmCadastraCliente.setVisible(true);
+		CadastroCliente cadastroCliente = new CadastroCliente();
+		cadastroCliente.setVisible(true);
 		setVisible(false);
 	}
 

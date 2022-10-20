@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 class CadastroCliente extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
-	JLabel lblEndereco = new JLabel ("Endere�o:");
+	JLabel lblEndereco = new JLabel ("Endereço:");
 	JLabel lblEmail = new JLabel ("Email:");
 	JLabel lblTelefone = new JLabel ("Telefone:");
 	JLabel lblCidade = new JLabel ("Cidade:");
@@ -180,8 +180,8 @@ class CadastroCliente extends JFrame{
 	}
 
 	private void btnVoltar(ActionEvent actionEvent) {
-		TelaCadastros telaCadastros = new TelaCadastros();
-		telaCadastros.setVisible(true);
+		Login Login = new Login();
+		Login.setVisible(true);
 		setVisible(false);
 	}
 

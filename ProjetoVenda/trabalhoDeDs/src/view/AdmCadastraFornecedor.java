@@ -3,10 +3,11 @@ package view;
 import dao.FornecedorDao;
 import model.Fornecedor;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
-class CadastroFornecedor extends JFrame{
+
+class AdmCadastraFornecedor extends JFrame{
 	JLabel lblNome = new JLabel ("Nome:");
 	JLabel lblCPF = new JLabel ("CPF:");
 	JLabel lblSexo = new JLabel ("Sexo:");
@@ -24,7 +25,7 @@ class CadastroFornecedor extends JFrame{
 	JLabel lblEspaco2 = new  JLabel ("");
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
-	
+
 	JTextField txtNome = new JTextField(null, 20);
 	JTextField txtCPF = new JTextField(null, 20);
 	JTextField txtTel1 = new JTextField(null, 20);
@@ -42,8 +43,8 @@ class CadastroFornecedor extends JFrame{
 
 	JButton btnSalvar = new JButton ("Salvar");
 	JButton btnVoltar = new JButton ("Voltar");
-	
-	public CadastroFornecedor() {
+
+	public AdmCadastraFornecedor() {
 		Container c = getContentPane();
 		 setLayout(new GridLayout (0,2));
 		 setTitle("Cadastro De Fornecedor");
