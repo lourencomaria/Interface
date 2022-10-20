@@ -2,11 +2,15 @@ package model;
 
 public class Fornecedor {
 
+
+    private int IdFornecedor;
     private String nome;
     private String cpf;
+
+
     private String sexo;
-    private Integer telefone1;
-    private Integer telefone2;
+    private String telefone1;
+    private String telefone2;
     private String email;
     private String cargo;
     private String estado;
@@ -15,6 +19,15 @@ public class Fornecedor {
     private String rua;
     private String complemento;
     private String redeSocial;
+
+
+    public int getIdFornecedor() {
+        return IdFornecedor;
+    }
+
+    public void setIdFornecedor(int idFornecedor) {
+        IdFornecedor = idFornecedor;
+    }
 
     public String getNome() {
         return nome;
@@ -40,19 +53,19 @@ public class Fornecedor {
         this.sexo = sexo;
     }
 
-    public Integer getTelefone1() {
+    public String getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(Integer telefone1) {
+    public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public Integer getTelefone2() {
+    public String getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(Integer telefone2) {
+    public void setTelefone2(String telefone2) {
         this.telefone2 = telefone2;
     }
 

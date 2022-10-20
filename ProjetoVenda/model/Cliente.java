@@ -2,6 +2,7 @@ package model;
 
 public class Cliente {
 
+    private int IdCliente;
     private String nome;
     private String email;
     private String endereco;
@@ -15,6 +16,14 @@ public class Cliente {
     private String sexo;
     private String senha;
 
+
+    public int getIdCliente() {
+        return IdCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        IdCliente = idCliente;
+    }
 
     public String getCidade() {
         return cidade;

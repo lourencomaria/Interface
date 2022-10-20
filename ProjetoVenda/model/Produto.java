@@ -3,13 +3,21 @@ package model;
 
 public class Produto {
 
+    private int idProduto;
+
     private String nome;
     private Integer quantidade;
     private double preco;
     private String categoria;
     private String descricao;
 
+    public int getIdProduto() {
+        return idProduto;
+    }
 
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
+    }
 
     public String getNome() {
         return nome;

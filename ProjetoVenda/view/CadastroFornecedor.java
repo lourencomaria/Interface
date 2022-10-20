@@ -1,5 +1,8 @@
 package view;
 
+import dao.FornecedorDao;
+import model.Fornecedor;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -19,8 +22,6 @@ class CadastroFornecedor extends JFrame{
 	JLabel lblRede = new JLabel ("Rede Social:");
 	JLabel lblEspaco = new  JLabel ("");
 	JLabel lblEspaco2 = new  JLabel ("");
-	String [] estados = {"AC", "AL","AP","AM" ,"BA" ,"CE" ,"DF" ,"ES" ,"GO" ,"MA" ,"MT" ,"MS" ,"MG" ,"PA" ,"PB" ,"PR" ,"PE" ,"PI" ,"RJ" ,"RN" ,"RS" ,"RO" ,"RR" ,"SC" ,"SP" ,"SE" ,"TO"};
-	JComboBox cboEstados = new JComboBox (estados);
 	String [] sexos = {"Masculino", "Feminino"};
 	JComboBox cboSexo = new JComboBox (sexos);
 	
@@ -33,6 +34,7 @@ class CadastroFornecedor extends JFrame{
 	JTextField txtQTD = new JTextField(null, 20);
 	JTextField txtRua = new JTextField(null, 20);
 	JTextField txtCidade = new JTextField(null, 20);
+	JTextField txtEstado = new JTextField(null, 20);
 	JTextField txtBairro = new JTextField(null, 20);
 	JTextField txtCEP = new JTextField(null, 20);
 	JTextField txtComp = new JTextField(null, 20);
@@ -84,8 +86,8 @@ class CadastroFornecedor extends JFrame{
 		 
 		 //ESTADO
 		 c.add(lblEstado).setFont(new Font("ROCKWELL", Font.BOLD, 14));
-		 c.add(cboEstados).setFont(new Font("ROCKWELL", Font.BOLD, 12));
-		 c.add(cboEstados).setBackground(Color.WHITE);
+		 c.add(txtEstado).setFont(new Font("ROCKWELL", Font.BOLD, 12));
+		 c.add(txtEstado).setBackground(new Color(173,216,230));
 		 
 		 //CIDADE
 		 c.add(lblCidade).setFont(new Font("ROCKWELL", Font.BOLD, 14));
@@ -147,8 +149,35 @@ class CadastroFornecedor extends JFrame{
 	}
 
 	private void btnSalvar(ActionEvent actionEvent) {
-		if(txtBairro.getText().isEmpty() || txtCargo.getText().isEmpty() || txtCEP.getText().isEmpty() || txtComp.getText().isEmpty() || txtEmail.getText().isEmpty() || txtCidade.getText().isEmpty() || txtCPF.getText().isEmpty() || txtEstado.getText().isEmpty() || txtNome.getText().isEmpty() || txtQTD.getText().isEmpty() || txtRede.getText().isEmpty() || txtRua.getText().isEmpty() || txtTel1.getText().isEmpty() || txtTel2.getText().isEmpty()){
+		if(txtBairro.getText().isEmpty() || txtCargo.getText().isEmpty() ||
+				txtComp.getText().isEmpty() || txtEmail.getText().isEmpty() || txtCidade.getText().isEmpty() ||
+				txtCPF.getText().isEmpty() || txtEstado.getText().isEmpty() || txtNome.getText().isEmpty()
+				|| txtRede.getText().isEmpty() || txtRua.getText().isEmpty() || txtTel1.getText().isEmpty() || txtTel2.getText().isEmpty()){
 			JOptionPane.showMessageDialog(null," Todos os campos são Obrigatorios!! ","Atencao",JOptionPane.WARNING_MESSAGE);
+
+		}else{
+			try {
+				Fornecedor fornecedor = new Fornecedor();
+				fornecedor.setBairro(txtBairro.getText());
+				fornecedor.setCargo(txtCargo.getText());
+				fornecedor.setComplemento(txtComp.getText());
+				fornecedor.setEmail(txtEmail.getText());
+				fornecedor.setCidade(txtCidade.getText());
+				fornecedor.setCpf(txtCPF.getText());
+				fornecedor.setEstado(txtEstado.getText());
+				fornecedor.setNome(txtNome.getText());
+				fornecedor.setRedeSocial(txtRede.getText());
+				fornecedor.setRua(txtRua.getText());
+				fornecedor.setTelefone1(txtTel1.getText());
+				fornecedor.setTelefone2(txtTel2.getText());
+				fornecedor.setSexo(cboSexo.getSelectedItem().toString());
+
+				FornecedorDao fornecedorDao = new FornecedorDao();
+				fornecedorDao.Cadastro(fornecedor);
+			}catch (Exception error){
+				JOptionPane.showMessageDialog(null,"Erro ao criar objeto. ERRO"+error,"ERRO",JOptionPane.ERROR_MESSAGE);
+
+			}
 
 		}
 	}
